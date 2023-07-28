@@ -4,6 +4,7 @@
 body{
     background-image: url(https://images.unsplash.com/photo-1586075574644-b6e4cb9df495?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhcGVyJTIwdGV4dHVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
     background-size: cover;
+    font-family: 'Poppins', sans-serif;
 }
 
 .image-profile{
@@ -12,18 +13,20 @@ body{
 }
 
 #titulo{
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 8vw;
 }
 
 #mi-nombre{
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 4vw;
     font-style: italic;
 }
 
 .profile-description{
-    
+    font-size: 1.3vw;
+}
+
+.skills{
+    font-size: 1.5vw;
 }
