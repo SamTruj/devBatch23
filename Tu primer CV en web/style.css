@@ -1,0 +1,29 @@
+/*Importar fuete poppins ExtraLight 200 - ExtraLight 200 Italic - Regular 400 - Regular 400 Italic - SemiBold 600 - SemiBold 600 Italic*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+
+body{
+    background-image: url(https://images.unsplash.com/photo-1586075574644-b6e4cb9df495?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBhcGVyJTIwdGV4dHVyZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80);
+    background-size: cover;
+}
+
+.image-profile{
+    height: auto;
+    width: 25vw;
+}
+
+#titulo{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 8vw;
+}
+
+#mi-nombre{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 4vw;
+    font-style: italic;
+}
+
+.profile-description{
+    
+}
