@@ -1,5 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    min-height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 80vh 10vh;
+}
+
+header {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    height: fit-content;
+}
+
+.header-icon{
+    width: 3vw;
+    height: auto;
+}
+
+#logo{
+    max-width:500px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#input-search {
+    background-color:white;
+	border-radius: 15px;
+    border:1px solid #767676;
+}
+
+#input-search:hover {
+    box-shadow: 0px 1px 3px 2px #919191;
+}
+
+button {
+    background-color: #e4edf5;
+    border-radius:3px;
+    color:#474747;
+    border: 0px;
+}
+
+button:hover {
+    border:1px solid rgb(165, 165, 165);
+}
+
+footer {
+    background-color: #f1f1f1;
+    color: #4a4a4a;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+footer a {
+    color: #4a4a4a;
 }
