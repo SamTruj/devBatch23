@@ -1,0 +1,40 @@
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 2vh 0;
+}
+
+.nav-icon {
+    height: auto;
+    width: 2vw;
+}
+
+.finder {
+    background-color: rgb(230, 230, 230);
+    width: 80vw;
+    padding: 0 1vw;
+    margin: 0;
+    border-radius: 30px;
+    outline: none;
+    border-width: 0;
+}
+
+.finder:focus {
+    border-width: 2px;
+    border-color: rgb(107, 198, 240);
+    border-style: solid;
+    outline: none;
+}
+
+#iconos-usuario {
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
