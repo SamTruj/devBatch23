@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 2%;
+    background-color: lightgray;
+}
+
+.azul {
+    background-color: aqua;
+}
+
+.chico{
+    height: 9vh;
+}
+
+.grande{
+    height: 18vh;
+}
+
+.mediano{
+    height: 18vh;
+    width: 49%;
+}
+
+.margin-derecho{
+    float: right;
+}
+
+.container{
+    margin: 2% 0;
+}
+
+.margin-abajo{
+    margin-bottom: 2%;
+}
