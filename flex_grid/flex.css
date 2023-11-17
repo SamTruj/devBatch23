@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 120vh;
+    height: 70vh;
+}
+
+container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.azul {
+    background-color: navy;
+}
+
+.vertical {
+    align-self: stretch;
+    width: 10vh;
+}
+
+.horizontal {
+    height: 10vh;
+    width: 100%;
+}
+
+.top_chico {
+    align-self: stretch;
+    flex-basis: 20%;
+    margin: 0 3vh 3vh 0;
+}
+
+.top_grande {
+    align-self: stretch;
+    flex-basis: 70%;
+    margin: 0 0 3vh 3vh;
+}
+
+.bottom_chico {
+    align-self: stretch;
+    flex-basis: 20%;
+    margin: 3vh 3vh 0 0;
+}
+
+.bottom_grande {
+    align-self: stretch;
+    flex-basis: 70%;
+    margin: 3vh 0 0 3vh;
+}
