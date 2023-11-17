@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 70%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh 13vh 40vh;
+}
+
+container {
+    display: grid;
+    grid-template-columns: 20vw 7vw 50vw;
+}
+
+.rojo {
+    background-color: red;
+}
+
+.azul {
+    background-color: navy;
+}
+
+.top_chico{
+   margin: 0 3vh 3vh 0;
+}
+
+.top_grande{
+    margin: 0 0 3vh 3vh;
+}
+
+.bottom_chico{
+    margin: 3vh 3vh 0 0;
+}
+
+.bottom_grande{
+    margin: 3vh 0 0 3vh;
+}
