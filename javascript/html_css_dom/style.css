@@ -1,0 +1,22 @@
+*{
+    padding: 15px;
+}
+
+#pantalla{
+    background-color:  rgb(119, 119, 192);
+    flex-basis: 40%;
+    color: rgb(255, 255, 255);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height:  50vh;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
