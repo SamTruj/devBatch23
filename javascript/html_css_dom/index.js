@@ -17,13 +17,14 @@ document.getElementById('izq_arriba').onclick = function () {asignarVenta(Juana)
 
 var precioProducto = 0, cantidadProducto = 0
 
+//productosVendidos: [aqua, emocion, alegria, frescura]
 var Juana = {
-    productosVendidos: [0,0,0,0],
-    gananciaGenerada: 0
+    productosVendidos: [2,1,1,1],
+    gananciaGenerada: 890
 }
 var Pedro = {
-    productosVendidos: 0,
-    gananciaGenerada: 0
+    productosVendidos: [2,0,0,2],
+    gananciaGenerada: 700
 }
 
 function ventaProducto(x) {
@@ -52,7 +53,25 @@ function ventaProducto(x) {
 
 function asignarVenta(vendedor){
     cantidadProducto = prompt('¿Cuanta fue la cantidad de producto vendido?')
-    vendedor.productosVendidos += cantidadProducto * 1 //por alguna razon aqui lo cuenta como int
+    //asignar dependiendo del tipo de producto vendido
+    switch(precioProducto) {
+        case 200: {
+            vendedor.productosVendidos[0] += cantidadProducto * 1//por alguna razon aqui lo cuenta como int
+            break
+        }
+        case 180: {
+            vendedor.productosVendidos[1] += cantidadProducto * 1
+            break
+        }
+        case 160: {
+            vendedor.productosVendidos[2] += cantidadProducto * 1
+            break
+        }
+        case 150: {
+            vendedor.productosVendidos[3] += cantidadProducto * 1
+            break
+        }
+    }
     vendedor.gananciaGenerada += cantidadProducto * precioProducto
     console.log(" ganancia: " + vendedor.gananciaGenerada + "  producto: " + vendedor.productosVendidos)
     //volver al inicio de todo
@@ -60,8 +79,9 @@ function asignarVenta(vendedor){
 }
 
 function reiniciar(){
-    //asignar texto a h2
+    //asignar texto a h2 y p
     document.getElementById('tituloPantalla').innerText = "Inserte su operación a relizar"
+    document.getElementById('parrafo').innerText = ""
     //asignar texto, valores y funcion a los botones de la derecha
     document.getElementById('der_1').disabled = false
     document.getElementById('der_1').innerText = "Venta de Aqua"
@@ -78,6 +98,7 @@ function reiniciar(){
     //asignar texto, valores y funcion a los botones de la izquierda
     document.getElementById('izq_arriba').disabled = false
     document.getElementById('izq_arriba').innerText = "¿Otra operación?"
+    document.getElementById('izq_arriba').onclick = otraOperacion
     document.getElementById('izq_abajo').disabled = true
     document.getElementById('izq_abajo').innerText = ""
 }
@@ -91,15 +112,67 @@ function otraOperacion(){
     document.getElementById('izq_arriba').disabled = true
     document.getElementById('izq_arriba').innerText = ""
     //asignar texto, valores y funciones a botones de la derecha
+    //boton 1
     document.getElementById('der_1').disabled = false
     document.getElementById('der_1').innerText = "Cantidad de productos de los vendedores"
+    document.getElementById('der_1').onclick = function () {imprimirTotales(1)}
+    //boton 2
     document.getElementById('der_2').disabled = false
-
     document.getElementById('der_2').innerText = "Total de dinero de los vendedores"
+    document.getElementById('der_2').onclick = function () {imprimirTotales(2)}
+    //boton 3
     document.getElementById('der_3').disabled = false
-
     document.getElementById('der_3').innerText = "Checar empleado del mes"
+    document.getElementById('der_3').onclick = function () {imprimirTotales(3)}
 
     document.getElementById('der_4').disabled = true
     document.getElementById('der_4').innerText = ""
+}
+
+function imprimirTotales(x){
+    //desabilitar los botones de la derecha
+    document.getElementById('der_1').disabled = true
+    document.getElementById('der_1').innerText = ""
+    document.getElementById('der_2').disabled = true
+    document.getElementById('der_2').innerText = ""
+    document.getElementById('der_3').disabled = true
+    document.getElementById('der_3').innerText = ""
+    document.getElementById('der_4').disabled = true
+    document.getElementById('der_4').innerText = ""
+    switch(x) {
+        case 1: {
+            //asignar texto a los h2 y paragraph
+            document.getElementById('tituloPantalla').innerText = "Total de productos vendidos"
+            document.getElementById('parrafo').innerText = "Juana:\n Aqua: " + Juana.productosVendidos[0] + " Emoción: " + Juana.productosVendidos[1] + " Alegria: " + Juana.productosVendidos[2] + " Frescura: " + Juana.productosVendidos[3] + "\n\n"
+            document.getElementById('parrafo').innerText += "Pedro:\n Aqua: " + Pedro.productosVendidos[0] + " Emoción: " + Pedro.productosVendidos[1] + " Alegria: " + Pedro.productosVendidos[2] + " Frescura: " + Pedro.productosVendidos[3]
+            //imprimir en consola porque lo dice en la actividad
+            console.log("Juana:\n Aqua: " + Juana.productosVendidos[0] + " Emoción: " + Juana.productosVendidos[1] + " Alegria: " + Juana.productosVendidos[2] + " Frescura: " + Juana.productosVendidos[3] + "\n\nPedro:\n Aqua: " + Pedro.productosVendidos[0] + " Emoción: " + Pedro.productosVendidos[1] + " Alegria: " + Pedro.productosVendidos[2] + " Frescura: " + Pedro.productosVendidos[3])
+            break
+        }
+        case 2: {
+            //asignar texto a los h2 y paragraph
+            document.getElementById('tituloPantalla').innerText = "Total de ganancia"
+            document.getElementById('parrafo').innerText = "Juana: " + Juana.gananciaGenerada + "\nPedro: " + Pedro.gananciaGenerada
+            //imprimir en consola porque lo dice en la actividad
+            console.log("Juana: " + Juana.gananciaGenerada + "\nPedro: " + Pedro.gananciaGenerada)
+            break
+        }
+        case 3: {
+            //asignar texto a los h2 y paragraph
+            if (Juana.gananciaGenerada > Pedro.gananciaGenerada) {
+                document.getElementById('tituloPantalla').innerText = "El empleado del mes es....\nJuana!!!"
+                //imprimir en consola porque lo dice en la actividad
+                console.log("El empleado del mes es....\nJuana!!!")
+            } else if(Juana.gananciaGenerada < Pedro.gananciaGenerada) {
+                document.getElementById('tituloPantalla').innerText = "El empleado del mes es....\nPedro!!!"
+                //imprimir en consola porque lo dice en la actividad
+                console.log("El empleado del mes es....\nPedro!!!")
+            } else {
+                document.getElementById('tituloPantalla').innerText = "El empleado del mes es....\nOh no, hay un empate!!!"
+                //imprimir en consola porque lo dice en la actividad
+                console.log("El empleado del mes es....\nOh no, hay un empate!!!")
+            }
+            break
+        }
+    }
 }
